@@ -1,13 +1,13 @@
 package output;
 
-import output.converter.ConverterSchemeChessBoardToString;
 import modelBoard.ChessBoard;
+import output.converter.ConverterSchemeChessBoardToString;
 
 public class OutputChessBoardSchemeToConsole implements OutputChessBoardScheme {
 
     ChessBoard chessBoard;
 
-    public OutputChessBoardSchemeToConsole(ChessBoard chessBoard){
+    public OutputChessBoardSchemeToConsole(ChessBoard chessBoard) {
         this.chessBoard = chessBoard;
     }
 
