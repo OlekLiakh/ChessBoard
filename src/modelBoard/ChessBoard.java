@@ -3,15 +3,16 @@ package modelBoard;
 public class ChessBoard {
     private int width, height;
 
-    public ChessBoard(int height, int width){
+    public ChessBoard(int height, int width) {
         this.height = height;
         this.width = width;
     }
 
-    public int getWidth(){
+    public int getWidth() {
         return width;
     }
-    public int getHeight(){
+
+    public int getHeight() {
         return height;
     }
 
