@@ -4,7 +4,7 @@ import modelBoard.ChessBoard;
 
 public class InputParametersFromConstructor implements InputParameters {
 
-    ChessBoard chessBoard;
+    private ChessBoard chessBoard;
 
     public InputParametersFromConstructor(int height, int width) {
         chessBoard = new ChessBoard(height, width);

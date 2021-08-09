@@ -28,16 +28,15 @@ public class InputParametersFromConsole implements InputParameters{
 
     private int getParameter(BufferedReader bf, String param) {
         int parameter = 0;
-        boolean isSuccessful = false;
+        boolean isSuccessful = true;
         String errorMessage = "Incorrect value. Input parameter must be an integer. " +
                 "Enter " + param + " again.";
-
         System.out.printf("Enter %s of chess board \n", param);
         try {
-            while(!isSuccessful){
+            while(isSuccessful){
                 try {
                     parameter = Integer.parseInt(bf.readLine());
-                    isSuccessful = true;
+                    isSuccessful = false;
                 }
                 catch (NumberFormatException nfe){
                     System.out.println(errorMessage);
