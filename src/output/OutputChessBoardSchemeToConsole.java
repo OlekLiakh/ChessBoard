@@ -5,7 +5,7 @@ import output.converter.ConverterSchemeChessBoardToString;
 
 public class OutputChessBoardSchemeToConsole implements OutputChessBoardScheme {
 
-    ChessBoard chessBoard;
+    private ChessBoard chessBoard;
 
     public OutputChessBoardSchemeToConsole(ChessBoard chessBoard) {
         this.chessBoard = chessBoard;

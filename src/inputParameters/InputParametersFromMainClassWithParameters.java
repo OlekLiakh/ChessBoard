@@ -8,8 +8,8 @@ import java.io.InputStreamReader;
 
 public class InputParametersFromMainClassWithParameters implements InputParameters {
 
-    String errorMessage = "Input parameter must be an integer. Incorrect value of ";
-    ChessBoard chessBoard;
+    private String errorMessage = "Input parameter must be an integer. Incorrect value of ";
+    private ChessBoard chessBoard;
 
     public InputParametersFromMainClassWithParameters(String[] args) {
         chessBoard = setParametersChessBord(args);
@@ -32,17 +32,6 @@ public class InputParametersFromMainClassWithParameters implements InputParamete
         return new ChessBoard(height, width);
     }
 
-    private int getParameter(String value, String param) {
-        int parameter = 0;
-        try {
-            parameter = Integer.parseInt(value);
-        } catch (NumberFormatException nfe) {
-            System.out.println(errorMessage + param);
-            parameter = getParameter(param);
-        }
-        return parameter;
-    }
-
     private int getParameter(String param) {
         int parameter = 0;
         boolean isSuccessful = false;
@@ -55,6 +44,17 @@ public class InputParametersFromMainClassWithParameters implements InputParamete
             } catch (IOException | NumberFormatException e) {
                 System.out.println(errorMessage + param);
             }
+        }
+        return parameter;
+    }
+
+    private int getParameter(String value, String param) {
+        int parameter = 0;
+        try {
+            parameter = Integer.parseInt(value);
+        } catch (NumberFormatException nfe) {
+            System.out.println(errorMessage + param);
+            parameter = getParameter(param);
         }
         return parameter;
     }

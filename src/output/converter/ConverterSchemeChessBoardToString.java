@@ -11,7 +11,6 @@ public class ConverterSchemeChessBoardToString {
     }
 
     public String getScheme() {
-
         String firstElem, nextElem;
         StringBuilder stringBuilder = new StringBuilder();
         for (int i = 0; i < Math.abs(chessBoard.getHeight()); i++) {
