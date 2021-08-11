@@ -11,23 +11,18 @@ public class ConverterSchemeChessBoardToString {
     }
 
     public String getScheme() {
-        String firstElem, nextElem;
+        String chessBoardCellType1 = "*";
+        String chessBoardCellType2 = " ";
         StringBuilder stringBuilder = new StringBuilder();
-        for (int i = 0; i < Math.abs(chessBoard.getHeight()); i++) {
+        for (int i = 1; i <= Math.abs(chessBoard.getWidth() * chessBoard.getHeight()); i++) {
             if (i % 2 == 0) {
-                firstElem = "*";
-                nextElem = " ";
+                stringBuilder.append(chessBoardCellType2);
             } else {
-                firstElem = " ";
-                nextElem = "*";
+                stringBuilder.append(chessBoardCellType1);
             }
-            for (int j = 0; j < Math.abs(chessBoard.getWidth()); j++) {
-                if (j % 2 == 0)
-                    stringBuilder.append(firstElem);
-                else stringBuilder.append(nextElem);
+            if (i % chessBoard.getWidth() == 0) {
+                stringBuilder.append("/n");
             }
-            if (i < Math.abs(chessBoard.getHeight()) - 1)
-                stringBuilder.append("\n");
         }
         return stringBuilder.toString();
     }
