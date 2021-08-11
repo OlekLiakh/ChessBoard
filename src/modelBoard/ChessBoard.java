@@ -11,11 +11,9 @@ public class ChessBoard {
     public int getWidth() {
         return width;
     }
-
     public int getHeight() {
         return height;
     }
-
     public String toString() {
         return "Chess board with dimensions height: " + height + ", width: " + width + ".";
     }
