@@ -6,16 +6,16 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 
-public class InputParametersFromConsole implements InputParameters{
+public class InputParametersFromConsole implements InputParameters {
 
     private ChessBoard chessBoard;
     private BufferedReader bf = new BufferedReader(new InputStreamReader(System.in));
 
-    public InputParametersFromConsole (){
-        chessBoard  = this.setParametersChessBord();
+    public InputParametersFromConsole() {
+        chessBoard = this.setParametersChessBord();
     }
 
-    public ChessBoard getChessBoard(){
+    public ChessBoard getChessBoard() {
         return chessBoard;
     }
 
@@ -23,7 +23,7 @@ public class InputParametersFromConsole implements InputParameters{
         int height = 0, width = 0;
         height = getParameter(bf, "height");
         width = getParameter(bf, "width");
-        return new ChessBoard(height,width);
+        return new ChessBoard(height, width);
     }
 
     private int getParameter(BufferedReader bf, String param) {
@@ -33,12 +33,11 @@ public class InputParametersFromConsole implements InputParameters{
                 "Enter " + param + " again.";
         System.out.printf("Enter %s of chess board \n", param);
         try {
-            while(isSuccessful){
+            while (isSuccessful) {
                 try {
                     parameter = Integer.parseInt(bf.readLine());
                     isSuccessful = false;
-                }
-                catch (NumberFormatException nfe){
+                } catch (NumberFormatException nfe) {
                     System.out.println(errorMessage);
                 }
             }
